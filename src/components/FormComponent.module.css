@@ -62,7 +62,7 @@
   gap: 1em;
 }
 
-.form_checked_content input{
+.form_checked_content input {
   cursor: pointer;
 }
 
@@ -125,24 +125,16 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #ccc;
 }
 
-.form_container button {
+#btn {
   border: none;
   display: flex;
   align-items: center;
-  margin: 2em auto;
-  padding: 0.5em 1.25em;
-  border-radius: 1em;
-  background: var(--red-primary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  margin: 1em auto;
   color: white;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.25s;
 }
 
-.form_container button:hover {
-  background: var(--red-secondary);
-}
 
 /* medias */
 
