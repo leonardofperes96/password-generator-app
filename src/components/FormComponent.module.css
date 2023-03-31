@@ -66,64 +66,95 @@
   cursor: pointer;
 }
 
-input[type="checkbox"] {
-  height: 26px;
-  border: 1px solid black;
-  width: 26px;
-  background: white;
-  filter: hue-rotate(18deg) brightness(1.2);
-}
-input[type="checkbox"]:checked {
-  background-color: red;
-}
-
-/* Firefox Color Edit*/
-input[type="range"]::-moz-range-progress {
-  background-color: var(--red-primary);
-  height: 0.5em;
-}
-input[type="range"]::-moz-range-track {
-  background-color: var(--gray-primary);
-}
-
-input[type="range"]::-moz-range-thumb {
-  border: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: var(--red-primary);
-}
-/* chrome */
-
+/********** Range Input Styles **********/
+/*Range Reset*/
 input[type="range"] {
   -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
-  height: 5px;
-  width: 100%;
-  border: none;
-  background: red;
-  border-radius: 3px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: var(--red-primary);
-  margin-top: -4px;
-}
-
+/* Removes default focus */
 input[type="range"]:focus {
   outline: none;
 }
 
-input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #ccc;
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #dbdbdb;
+  border-radius: 0.5rem;
+  height: 0.5rem;
 }
+
+
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -5px; /* Centers thumb on the track */
+  border-radius: 50%;
+  /*custom styles*/
+  background-color: var(--red-primary);
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-bottom: 0;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid #053a5f;
+  outline: 3px solid #053a5f;
+  outline-offset: 0.125rem;
+}
+
+input[type="range"]::-webkit-progress{
+  background-color: var(--red-primary);
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #dbdbdb;
+  border-radius: 2em;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 50%; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: var(--red-primary);
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid #053a5f;
+  outline: 3px solid #053a5f;
+  outline-offset: 0.125rem;
+}
+
+input[type='range']::-moz-range-progress{
+  background-color: var(--red-primary);
+  height: 0.5rem;
+}
+
+input[type='range']:focus::-moz-range-progress{
+  background-color: var(--red-primary);
+  height: 0.5rem;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--red-primary);
+}
+
 
 #btn {
   border: none;
@@ -134,7 +165,6 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   letter-spacing: 1px;
   cursor: pointer;
 }
-
 
 /* medias */
 
